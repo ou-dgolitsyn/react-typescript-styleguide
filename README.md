@@ -7,6 +7,10 @@
 
 A single advice that inspires all the others (1 special bullet)
 
+#### [`Section 1: Test gif image`](#section-1)
+
+A single advice that inspires all the others (1 special bullet)
+
 <br/>
 
 
@@ -53,3 +57,9 @@ test("When asking for an admin, ensure only ordered admins in results", () => {
 
 [Test external link 1](http://a.com)
 
+# Section 1: Test gif <a id="section-1"></a>
+
+<br/>
+
+## Block 0:
+![alt text](/assets/test.gif)
