@@ -3,22 +3,32 @@
 
 ## `Table of Contents`
 
-#### [`Section 0: Test code blocks`](#section-0)
+#### [`Section 1: Code style`](#code-style)
 
-A single advice that inspires all the others (1 special bullet)
+Eslint & common patterns
 
-#### [`Section 1: Test gif image`](#section-1)
+#### [`Section 2: Best practices`](#best-practices)
 
-A single advice that inspires all the others (1 special bullet)
+React + TS
+
+#### [`Section 3: Anti-patterns`](#antipatterns)
+
+The Bad and the Ugly
+
+#### [`Section 4: Useful IDE plugins`](#plugins)
+
+Make your develop easier
+
+#### [`Section 5: Articles`](#articles)
+
+What to read about TS & React
 
 <br/>
 
 
-# Section 0️⃣: Test code blocks <a id="section-0"></a>
+## Section 1: Code style <a id="code-style"></a>
 
-<br/>
-
-## ⚪️ Block 0
+### 1.1 Eslint
 
 Testing code is not like production-code - design it to be dead-simple, short, abstraction-free, flat, delightful to work with, lean. One should look at a test and get the intent instantly.
 
@@ -55,11 +65,30 @@ test("When asking for an admin, ensure only ordered admins in results", () => {
 ```
 > Comment: A test report should tell whether the current application revision satisfies the requirements for the people who are not necessarily familiar with the code: the tester, the DevOps engineer who is deploying and the future you two years from now.
 
-[Test external link 1](http://a.com)
+## Section 2: Best practices <a id="best-practices"></a>
 
-# Section 1: Test gif <a id="section-1"></a>
+### 2.1 ---
 
-<br/>
+Testing code is not like production-code - design it to be dead-simple, short, abstraction-free, flat, delightful to work with, lean. One should look at a test and get the intent instantly.
 
-## Block 0:
+## Section 3: Anti-patterns <a id="antipatterns"></a>
+
+### 3.1 ---
+
+Testing code is not like production-code - design it to be dead-simple, short, abstraction-free, flat, delightful to work with, lean. One should look at a test and get the intent instantly.
+
+## Section 4: Useful IDE plugins <a id="plugins"></a>
+
+### 4.1 ---
+
+Testing code is not like production-code - design it to be dead-simple, short, abstraction-free, flat, delightful to work with, lean. One should look at a test and get the intent instantly.
+
 ![alt text](/assets/test.gif)
+
+## Section 5: Articles <a id="articles"></a>
+
+### 5.1 ---
+
+Testing code is not like production-code - design it to be dead-simple, short, abstraction-free, flat, delightful to work with, lean. One should look at a test and get the intent instantly.
+
+[Test external link 1](http://a.com)
