@@ -4,33 +4,67 @@
 
 ## `Table of Contents`
 
-#### [`Section 1: Code style`](#code-style)
+#### [`Section 1: Project setup`](#setup)
 
-Eslint & common patterns
+IDE & tools set up
 
 #### [`Section 2: Best practices`](#best-practices)
 
-React + TS
+Code style & React patterns
 
 #### [`Section 3: Libraries & patterns`](#libraries)
 
 How to use technologies in the project
 
-#### [`Section 4: Anti-patterns`](#antipatterns)
-
-The Bad and the Ugly
-
-#### [`Section 5: Useful IDE plugins`](#plugins)
+#### [`Section 4: Useful IDE plugins`](#plugins)
 
 Make your develop easier
 
-#### [`Section 6: Useful links`](#links)
+#### [`Section 5: Useful links`](#links)
 
 To read about TS & React
 
 <br/>
 
-## Section 1: Code style <a id="code-style"></a>
+## Section 1: Project setup <a id="setup"></a>
+
+### Rider setup
+- run scripts
+- format code with prettier (https://www.jetbrains.com/help/rider/Prettier.html)
+- set up linting (https://www.jetbrains.com/help/rider/eslint.html#ws_eslint_configure_highlighting)
+
+### VS Code setup
+- run scripts
+- install prettier plugin
+- install eslint
+- custom settings
+
+### Folder structure overview
+```
+FirstKey.Acquire.Web
+├── front
+│   ├── assets
+│   ├── mocks
+│   ├── src
+│   │   ├── @components 
+│   │   ├── @config
+│   │   ├── @hooks
+│   │   ├── @services
+│   │   ├── @store
+│   │   ├── @types
+│   │   ├── @utils
+│   │   ├── Contexts
+│   │   ├── Pages
+│   │   ├── Validation
+│   │   ├── App.less
+│   │   ├── App.tsx
+│   │   ├── Content.tsx
+│   │   └── index.ts
+│   ├── tests
+│   └── typings
+├── wwwroot
+└── package.json
+```
 
 ### 1.1 Eslint & Prettier
 
@@ -84,7 +118,7 @@ This can be fully applied to the components of the react.
 
 #### 1.3.2 Do not use functions to generate html, prefer child components
 
-❌ **Not:**
+❌ **Not: use getContent, buttonsFactory or similar**
 
 ```typescript
 const Component: FC = () => {
@@ -103,7 +137,7 @@ const Component: FC = () => {
 };
 ```
 
-✅ **Do:**
+✅ **Do: prefer create of a separate components**
 
 ```tsx 
 type TProps = {
@@ -185,13 +219,75 @@ export type TStatus = {
 
 ## Section 2: Best practices <a id="best-practices"></a>
 
-### 2.1 shallow copy for easy-peasy
+### 2.1 Meaningless function names
 
-### 2.2 named export + memo
+❌ **Not: name function like check, perform, process** 
+1. Function does not check status, but validates selectedPropertiesData
+2. Until you read function's code you cannot guess if true means valid or not
+```ts
+function checkStatus() {
+  return (isEmpty(selectedPropertiesData) || !selectedPropertiesData.every((prop: any) => prop.status === selectedPropertiesData[0].status);)
+}
+```
 
-### 2.3 avoid props in favor of direct store access
+✅ **Do: prefer to name functions like getSomething**
 
-### 2.4 wrap components to facades
+Function name is self explanatory
+```ts
+function getIsReadyForStatusUpdate() {
+  // Allow to update status if there are selected properties
+  if (!isEmpty(selectedPropertiesData)) return false;
+
+  // And all selected properties are in the same status
+  return selectedPropertiesData.every((prop: any) => prop.status === selectedPropertiesData[0].status);
+}
+```
+
+### 2.2 Using location.pathname based logic
+❌ **Not: use location.pathname in any conditions** 
+```ts
+    switch (pathname) {
+        case '/properties':
+            tabs = ListingSearchButtons;
+            searchBar = searchComp;
+            break;
+        case '/admin':
+            tabs = null;
+            break;
+        default:
+            if (location.includes(`${listingSearch}/`) && location.length > 12) {
+                tabs = null;
+            }
+            break;
+    }
+```
+
+✅ **Do: prefer to use routing**
+
+Function name is self explanatory
+```ts
+<Routes>
+    <Route path="/properties/*" element={<PropertySearch />} />    
+    <Route path="/admin/*" element={<AdminConsole />} />
+    <Route path="/" element={<Navigate to="/properties" />} />
+</Routes>
+```
+
+### 2.3 Using lots of useState
+
+Combine to single state for better performance
+
+### 2.4 Using useState for reference types
+
+shallow copy with useState
+
+### 2.5 shallow copy for easy-peasy
+
+### 2.6 named export + memo
+
+### 2.7 avoid props in favor of direct store access
+
+### 2.8 wrap components to facades
 
 ## Section 3: Libraries & patterns <a id="libraries"></a>
 
@@ -203,34 +299,14 @@ export type TStatus = {
 
 ### 3.4 yup
 
-## Section 4: Anti-patterns <a id="antipatterns"></a>
+## Section 4: Useful IDE plugins <a id="plugins"></a>
 
-### 4.1 Using lots of useState
+### 4.1 ESlint
 
-Combine to single state for better performance
+### 4.2 path intellisense + alias config in settings
 
-### 4.2 Using useState for reference types
+### 4.3 todo
 
-shallow copy with useState
+### 4.5 spellcheck
 
-### 4.3 Using of @ignore/no-check
-
-Use Partial, any, but create a strict ts files
-
-## Section 5: Useful IDE plugins <a id="plugins"></a>
-
-### 5.1 ESlint
-
-### 5.2 path intellisense + alias config in settings
-
-### 5.3 todo
-
-### 5.3 spellcheck
-
-## Section 6: Useful links <a id="links"></a>
-
-### 6.1 ---
-
-Testing code is not like production-code - design it to be dead-simple, short, abstraction-free, flat, delightful to work with, lean. One should look at a test and get the intent instantly.
-
-[Test external link 1](http://a.com)
+## Section 5: Useful links <a id="links"></a>
