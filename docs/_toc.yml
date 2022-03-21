@@ -4,4 +4,11 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
+- file: project-setup
+- file: best-practices
+- file: data-fetching
+- file: forms
+- file: styles
+- file: testing
+- file: plugins
+- file: links
