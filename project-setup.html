@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project setup &#8212; Style guide &amp; best practices for using typescript &amp; React</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Best practices" href="best-practices.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Style guide & best practices for using typescript & React</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Project setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practices.html">
+   Best practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-fetching.html">
+   Data fetching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forms.html">
+   Forms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/project-setup.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ou-dgolitsyn/react-typescript-styleguide"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ou-dgolitsyn/react-typescript-styleguide/issues/new?title=Issue%20on%20page%20%2Fproject-setup.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rider-setup">
+   Rider setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vs-code-setup">
+   VS Code setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#folder-structure-overview">
+   Folder structure overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eslint-prettier">
+   1.1 Eslint &amp; Prettier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-structure-imports">
+   1.2 Project structure &amp; imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#component-file-formatting">
+   1.3 Component file formatting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lines-rule">
+     1.3.1 100 lines rule
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-not-use-functions-to-generate-html-prefer-child-components">
+     1.3.2 Do not use functions to generate html, prefer child components
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#place-all-additional-code-as-pure-functions-under-component-or-in-separate-file">
+     1.3.3 Place all additional code as pure functions under component or in separate file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-all-store-state-actions-mappings-to-mapstate-mapactions">
+     1.3.4 Remove all store state/actions mappings to mapState/mapActions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naming-conventions">
+   1.4 Naming conventions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enums">
+     1.4.1 Enums
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Project setup</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rider-setup">
+   Rider setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vs-code-setup">
+   VS Code setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#folder-structure-overview">
+   Folder structure overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eslint-prettier">
+   1.1 Eslint &amp; Prettier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-structure-imports">
+   1.2 Project structure &amp; imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#component-file-formatting">
+   1.3 Component file formatting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lines-rule">
+     1.3.1 100 lines rule
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-not-use-functions-to-generate-html-prefer-child-components">
+     1.3.2 Do not use functions to generate html, prefer child components
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#place-all-additional-code-as-pure-functions-under-component-or-in-separate-file">
+     1.3.3 Place all additional code as pure functions under component or in separate file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-all-store-state-actions-mappings-to-mapstate-mapactions">
+     1.3.4 Remove all store state/actions mappings to mapState/mapActions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naming-conventions">
+   1.4 Naming conventions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enums">
+     1.4.1 Enums
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="project-setup">
+<h1>Project setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rider-setup">
+<h2>Rider setup<a class="headerlink" href="#rider-setup" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>run scripts</p></li>
+<li><p>format code with prettier (<a class="reference external" href="https://www.jetbrains.com/help/rider/Prettier.html">https://www.jetbrains.com/help/rider/Prettier.html</a>)</p></li>
+<li><p>set up linting (<a class="reference external" href="https://www.jetbrains.com/help/rider/eslint.html#ws_eslint_configure_highlighting">https://www.jetbrains.com/help/rider/eslint.html#ws_eslint_configure_highlighting</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="vs-code-setup">
+<h2>VS Code setup<a class="headerlink" href="#vs-code-setup" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>run scripts</p></li>
+<li><p>install prettier plugin</p></li>
+<li><p>install eslint</p></li>
+<li><p>custom settings</p></li>
+</ul>
+</div>
+<div class="section" id="folder-structure-overview">
+<h2>Folder structure overview<a class="headerlink" href="#folder-structure-overview" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FirstKey.Acquire.Web
+├── front
+│   ├── assets
+│   ├── mocks
+│   ├── src
+│   │   ├── @components 
+│   │   ├── @config
+│   │   ├── @hooks
+│   │   ├── @services
+│   │   ├── @store
+│   │   ├── @types
+│   │   ├── @utils
+│   │   ├── Contexts
+│   │   ├── Pages
+│   │   ├── Validation
+│   │   ├── App.less
+│   │   ├── App.tsx
+│   │   ├── Content.tsx
+│   │   └── index.ts
+│   ├── tests
+│   └── typings
+├── wwwroot
+└── package.json
+</pre></div>
+</div>
+</div>
+<div class="section" id="eslint-prettier">
+<h2>1.1 Eslint &amp; Prettier<a class="headerlink" href="#eslint-prettier" title="Permalink to this headline">¶</a></h2>
+<p>For styling &amp; formatting of any aspect of front-end code we use ESLint with mostly airbnb presets &amp; Prettier.</p>
+<p>In typescript files ESLint errors &amp; warnings will be highlighted if using VS Code extension <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint"><code class="docutils literal notranslate"><span class="pre">ESLint</span> <span class="pre">extension</span></code></a></p>
+<p>To check eslint in all files run command</p>
+<blockquote>
+<div><p>yarn build</p>
+</div></blockquote>
+<p>Or for deeper but slower test use</p>
+<blockquote>
+<div><p>yarn test:ci</p>
+</div></blockquote>
+<p>Lots of useful eslint rules are turned off because of amount of fixes needed to use such rules. So to increase the code quality you can switch on some of rules listed in <strong>toBeFixed</strong> section in the .eslintrc file and fix lint errors.</p>
+</div>
+<div class="section" id="project-structure-imports">
+<h2>1.2 Project structure &amp; imports<a class="headerlink" href="#project-structure-imports" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>use index.ts for cleaner imports from &#64;components/hooks etc.</p></li>
+<li><p>place common components in &#64;components</p></li>
+<li><p>do not use Helpers or any other common React files. Only pure js/ts service functions should be placed in various utils.ts files</p></li>
+</ul>
+</div>
+<div class="section" id="component-file-formatting">
+<h2>1.3 Component file formatting<a class="headerlink" href="#component-file-formatting" title="Permalink to this headline">¶</a></h2>
+<p>This is the preferred code layout for react component file:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="o">&lt;</span><span class="nx">es</span> <span class="kr">module</span><span class="nx">s</span> <span class="nx">imports</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Component</span>: <span class="kt">FC</span><span class="o">&lt;</span><span class="nx">TProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Code of component no more than 100 lines long</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">mapState</span><span class="p">(</span><span class="nx">state</span>: <span class="kt">TStoreState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Pure functions used exclusively by the component</span>
+<span class="p">}</span>
+
+<span class="kr">type</span> <span class="nx">TProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// Type declaration for component properties</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="lines-rule">
+<h3>1.3.1 100 lines rule<a class="headerlink" href="#lines-rule" title="Permalink to this headline">¶</a></h3>
+<p>Bob Martin takes the idea that “if small is good, then smaller must be better” to an extreme in Clean Code:</p>
+<blockquote>
+<div><p>The first rule of functions is that they should be small. The second rule of functions is that they should be smaller than that. Functions should not be 100 lines long. Functions should hardly ever be 20 lines long.</p>
+</div></blockquote>
+<p>This can be fully applied to the components of the react.</p>
+</div>
+<div class="section" id="do-not-use-functions-to-generate-html-prefer-child-components">
+<h3>1.3.2 Do not use functions to generate html, prefer child components<a class="headerlink" href="#do-not-use-functions-to-generate-html-prefer-child-components" title="Permalink to this headline">¶</a></h3>
+<p>❌ <strong>Not: use getContent, buttonsFactory or similar</strong></p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span>const Component: FC = () =&gt; {
+  const getTooltipContent = (options: string[]) =&gt; {
+    return options.map((option) =&gt; {
+      return;
+    });
+  };
+  const createTooltipContentItem = (title: string): ReactNode =&gt; (
+    &lt;div className={`text-base flex nowrap justify-between items-center`}&gt;
+      {title}
+    &lt;/div&gt;
+  );
+
+  return &lt;div&gt;{getTooltipContent([&quot;one&quot;, &quot;two&quot;, &quot;three&quot;])}&lt;/div&gt;;
+};
+</pre></div>
+</div>
+<p>✅ <strong>Do: prefer create of a separate components</strong></p>
+<div class="highlight-tsx notranslate"><div class="highlight"><pre><span></span>type TProps = {
+  title: string;
+};
+const TooltipContentItem: FC&lt;TProps&gt; = ({ title }) =&gt; (
+  &lt;div className={`text-base flex nowrap justify-between items-center`}&gt;
+    {title}
+  &lt;/div&gt;
+);
+</pre></div>
+</div>
+<div class="highlight-tsx notranslate"><div class="highlight"><pre><span></span>const Component: FC = () =&gt; (
+  &lt;div&gt;
+    {[&quot;one&quot;, &quot;two&quot;, &quot;three&quot;].map((option) =&gt; (
+      &lt;TooltipContentItem option={option} /&gt;
+    ))}
+  &lt;/div&gt;
+);
+</pre></div>
+</div>
+</div>
+<div class="section" id="place-all-additional-code-as-pure-functions-under-component-or-in-separate-file">
+<h3>1.3.3 Place all additional code as pure functions under component or in separate file<a class="headerlink" href="#place-all-additional-code-as-pure-functions-under-component-or-in-separate-file" title="Permalink to this headline">¶</a></h3>
+<p>// TODO: add example</p>
+</div>
+<div class="section" id="remove-all-store-state-actions-mappings-to-mapstate-mapactions">
+<h3>1.3.4 Remove all store state/actions mappings to mapState/mapActions<a class="headerlink" href="#remove-all-store-state-actions-mappings-to-mapstate-mapactions" title="Permalink to this headline">¶</a></h3>
+<p>// TODO: add shallowCopy to mappings</p>
+<p>❌ <strong>Not:</strong></p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">Component</span>: <span class="kt">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">userName</span> <span class="o">=</span> <span class="nx">useStore</span><span class="p">((</span><span class="nx">state</span>: <span class="kt">TStoreState</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">authentication</span><span class="p">.</span><span class="nx">userName</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">price</span> <span class="o">=</span> <span class="nx">useStore</span><span class="p">((</span><span class="nx">state</span>: <span class="kt">TStoreState</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">offer</span><span class="p">.</span><span class="nx">price</span><span class="p">);</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>✅ <strong>Do:</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">Component</span><span class="o">:</span> <span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">userName</span><span class="p">,</span> <span class="nx">price</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useStore</span><span class="p">(</span><span class="nx">mapState</span><span class="p">);</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">mapState</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span> <span class="nx">TStoreState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">userName</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">authentication</span><span class="p">.</span><span class="nx">userName</span><span class="p">,</span>
+    <span class="nx">price</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">offer</span><span class="p">.</span><span class="nx">price</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="naming-conventions">
+<h2>1.4 Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enums">
+<h3>1.4.1 Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h3>
+<p>Enums are typescript types, named with a capital T without a plural</p>
+<p>❌ <strong>Not:</strong></p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kr">type</span> <span class="nx">MyStatuses</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">NEW</span> <span class="o">=</span> <span class="s1">&#39;New&#39;</span><span class="p">,</span>
+  <span class="nx">ASSIGNED</span> <span class="o">=</span> <span class="s1">&#39;Assigned&#39;</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>✅ <strong>Do:</strong></p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kr">type</span> <span class="nx">TStatus</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">NEW</span> <span class="o">=</span> <span class="s1">&#39;New&#39;</span><span class="p">,</span>
+  <span class="nx">ASSIGNED</span> <span class="o">=</span> <span class="s1">&#39;Assigned&#39;</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="best-practices.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Best practices</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dmitry Golitsyn<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
