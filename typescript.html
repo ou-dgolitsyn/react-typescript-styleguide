@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Useful links &#8212; Style guide &amp; best practices for using typescript &amp; React</title>
+    <title>Typescript hints &#8212; Style guide &amp; best practices for using typescript &amp; React</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="React best practices" href="react.html" />
-    <link rel="prev" title="IDE plugins" href="plugins.html" />
+    <link rel="next" title="Styles" href="css.html" />
+    <link rel="prev" title="React best practices" href="react.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
   Overview
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="project-setup.html">
    Project setup
@@ -109,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
    IDE plugins
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="links.html">
    Useful links
   </a>
  </li>
@@ -120,14 +120,14 @@ const thebe_selector_output = ".output, .cell_output"
   Best practices
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="react.html">
    React best practices
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="typescript.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Typescript hints
   </a>
  </li>
@@ -206,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/links.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/typescript.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -226,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ou-dgolitsyn/react-typescript-styleguide/issues/new?title=Issue%20on%20page%20%2Flinks.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ou-dgolitsyn/react-typescript-styleguide/issues/new?title=Issue%20on%20page%20%2Ftypescript.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -247,6 +247,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#meaningless-function-names">
+   2.1 Meaningless function names
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -254,19 +267,56 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Useful links</h1>
+                <h1>Typescript hints</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#meaningless-function-names">
+   2.1 Meaningless function names
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="useful-links">
-<h1>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="typescript-hints">
+<h1>Typescript hints<a class="headerlink" href="#typescript-hints" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="meaningless-function-names">
+<h2>2.1 Meaningless function names<a class="headerlink" href="#meaningless-function-names" title="Permalink to this headline">¶</a></h2>
+<p>❌ <strong>Not: name function like check, perform, process</strong></p>
+<ol class="simple">
+<li><p>Function does not check status, but validates selectedPropertiesData</p></li>
+<li><p>Until you read function’s code you cannot guess if true means valid or not</p></li>
+</ol>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">checkStatus</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">selectedPropertiesData</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="nx">selectedPropertiesData</span><span class="p">.</span><span class="nx">every</span><span class="p">((</span><span class="nx">prop</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">prop</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">selectedPropertiesData</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">status</span><span class="p">);)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>✅ <strong>Do: prefer to name functions like getSomething</strong></p>
+<p>Function name is self explanatory</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getIsReadyForStatusUpdate</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Allow to update status if there are selected properties</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">selectedPropertiesData</span><span class="p">))</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="c1">// And all selected properties are in the same status</span>
+  <span class="k">return</span> <span class="nx">selectedPropertiesData</span><span class="p">.</span><span class="nx">every</span><span class="p">((</span><span class="nx">prop</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">prop</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">selectedPropertiesData</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">status</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -294,17 +344,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="plugins.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="react.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">IDE plugins</p>
+            <p class="prev-next-title">React best practices</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="react.html" title="next page">
+    <a class='right-next' id="next-link" href="css.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">React best practices</p>
+        <p class="prev-next-title">Styles</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
