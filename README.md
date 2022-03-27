@@ -6,13 +6,15 @@ Guide exists in a form of a jupyter-book published on a github-pages.
 
 [START READING ▶️ ](https://ou-dgolitsyn.github.io/react-typescript-styleguide)
 
-# Compilation
+# Develop
 
 For the first time check the [brilliant docs](https://jupyterbook.org/start).
 
-To compile the jupyter-book from markdown & publish it to gh-pages do the following:
+To compile the jupyter-book from markdown run:
+> jupyter-book build --all ./docs
 
-- Fix the content of the .md files in /docs
-- Check /docs/_toc.yml for the book structure changes
-- Run **jupyter-book build --all ./docs**
-- Run **ghp-import -n -p -f ./docs/_build/html**
+To preview the compiled book run:
+> http-server ./docs/_build/html
+
+To publish the book to the github pages run:
+> ghp-import -n -p -f ./docs/_build/html

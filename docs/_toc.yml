@@ -2,13 +2,34 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: project-setup
-- file: best-practices
-- file: data-fetching
-- file: forms
-- file: styles
-- file: testing
-- file: plugins
-- file: links
+root: index
+parts: 
+  - caption: Overview
+    chapters:
+      - file: overview/project-setup
+      - file: overview/plugins
+      - file: overview/links
+  - caption: Best practices
+    chapters:
+      - file: best-practices/react
+      - file: best-practices/typescript
+      - file: best-practices/css
+  - caption: Forms
+    chapters:
+      - file: forms/overview
+  - caption: Working with data
+    chapters:
+      - file: data/overview
+  - caption: Testing
+    chapters:
+      - file: testing/overview
+      - file: testing/storybook
+      - file: testing/snapshots
+      - file: testing/mocks
+      - file: testing/test-structure      
+      - file: testing/best-practices
+      - file: testing/test-example
+      - file: testing/coverage
+      - file: testing/plugins
+      - file: testing/links
+
