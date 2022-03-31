@@ -5,29 +5,34 @@ format: jb-book
 root: index
 parts: 
   - caption: Overview
+    numbered: true
     chapters:
       - file: overview/project-setup
       - file: overview/plugins
       - file: overview/links
   - caption: Best practices
+    numbered: true
     chapters:
+      - file: best-practices/common
       - file: best-practices/react
       - file: best-practices/typescript
       - file: best-practices/css
   - caption: Forms
+    numbered: true
     chapters:
-      - file: forms/overview
+      - file: forms/intro
   - caption: Working with data
+    numbered: true
     chapters:
-      - file: data/overview
+      - file: data/intro
   - caption: Testing
+    numbered: true
     chapters:
-      - file: testing/overview
+      - file: testing/intro
       - file: testing/storybook
       - file: testing/snapshots
       - file: testing/mocks
-      - file: testing/test-structure      
-      - file: testing/best-practices
+      - file: testing/test-structure
       - file: testing/test-example
       - file: testing/coverage
       - file: testing/plugins

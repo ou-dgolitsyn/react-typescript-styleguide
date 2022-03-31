@@ -1,6 +1,6 @@
 # React best practices
 
-## 2.1 Meaningless function names
+## Meaningless function names
 
 ❌ **Not: name function like check, perform, process** 
 1. Function does not check status, but validates selectedPropertiesData
@@ -24,7 +24,7 @@ function getIsReadyForStatusUpdate() {
 }
 ```
 
-## 2.2 Using location.pathname based logic
+## Using location.pathname based logic
 ❌ **Not: use location.pathname in any conditions** 
 ```ts
     switch (pathname) {
@@ -46,26 +46,96 @@ function getIsReadyForStatusUpdate() {
 ✅ **Do: prefer to use routing**
 
 Function name is self explanatory
-```ts
+:::{code-block} jsx
 <Routes>
     <Route path="/properties/*" element={<PropertySearch />} />    
     <Route path="/admin/*" element={<AdminConsole />} />
     <Route path="/" element={<Navigate to="/properties" />} />
 </Routes>
-```
+:::
 
-## 2.3 Using lots of useState
+## Using lots of useState
 
 Combine to single state for better performance
 
-## 2.4 Using useState for reference types
+## Using useState for reference types
 
 shallow copy with useState
 
-## 2.5 shallow copy for easy-peasy
+## shallow copy for easy-peasy
 
-## 2.6 named export + memo
+## named export + memo
 
-## 2.7 avoid props in favor of direct store access
+## avoid props in favor of direct store access
 
-## 2.8 wrap components to facades
+## Do not use functions to generate html, prefer child components
+
+❌ **Not: use getContent, buttonsFactory or similar**
+
+```{code-block} jsx
+const Component: FC = () => {
+  const getTooltipContent = (options: string[]) => {
+    return options.map((option) => {
+      return;
+    });
+  };
+  const createTooltipContentItem = (title: string): ReactNode => (
+    <div className={`text-base flex nowrap justify-between items-center`}>
+      {title}
+    </div>
+  );
+
+  return <div>{getTooltipContent(["one", "two", "three"])}</div>;
+};
+```
+
+✅ **Do: prefer create of a separate components**
+
+```{code-block} jsx
+type TProps = {
+  title: string;
+};
+const TooltipContentItem: FC<TProps> = ({ title }) => (
+  <div className={`text-base flex nowrap justify-between items-center`}>
+    {title}
+  </div>
+);
+```
+```{code-block} jsx
+const Component: FC = () => (
+  <div>
+    {["one", "two", "three"].map((option) => (
+      <TooltipContentItem option={option} />
+    ))}
+  </div>
+);
+```
+
+## Remove all store state/actions mappings to mapState/mapActions
+// TODO: add shallowCopy to mappings
+
+❌ **Not:**
+
+```ts
+const Component: FC = () => {
+  const userName = useStore((state: TStoreState) => authentication.userName);
+  const price = useStore((state: TStoreState) => offer.price);
+  ...
+}
+```
+
+✅ **Do:**
+
+```ts
+const Component: FC = () => {
+  const { userName, price } = useStore(mapState);
+  ...
+}
+
+function mapState(state: TStoreState) {
+  return {
+    userName: state.authentication.userName,
+    price: state.offer.price
+  }
+}
+```

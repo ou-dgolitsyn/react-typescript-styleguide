@@ -1,6 +1,30 @@
-# Typescript hints
+# Typescript best practices
 
-## 2.1 Meaningless function names
+## Enums
+
+Enums are typescript types, named with a capital T without a plural
+
+❌ **Not:**
+
+```ts
+export type MyStatuses = {
+  NEW = 'New',
+  ASSIGNED = 'Assigned',
+  ...
+}
+```
+
+✅ **Do:**
+
+```ts
+export type TStatus = {
+  NEW = 'New',
+  ASSIGNED = 'Assigned',
+  ...
+}
+```
+
+## Meaningless function names
 
 ❌ **Not: name function like check, perform, process** 
 1. Function does not check status, but validates selectedPropertiesData

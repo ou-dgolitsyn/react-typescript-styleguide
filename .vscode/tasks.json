@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-storybook",
+            "type": "shell",
+            "presentation": {
+                "panel": "shared",
+                "reveal": "always"
+            },
+            "command": "jupyter-book build --all ./docs"
+        }
+    ]
+}
