@@ -1,0 +1,63 @@
+.header-article,
+.header-article-main {
+  height: 0 !important;
+}
+
+.header-article__left,
+.header-article__right {
+  display: none !important;
+}
+
+.navbar-brand-box {
+  display: none;
+}
+
+.bd-toc {
+  margin-top: 1em;
+}
+
+.bd-sidebar__top > .bd-search {
+  display: none !important;
+}
+
+#main-content {
+  min-height: 85vh;
+}
+
+#main-content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article {
+  height: 100%;
+}
+
+.prev-next-area {
+  height: 9em;
+  margin: 0 !important;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-content {
+  display: none;
+}
+li {
+  overflow: hidden !important;
+}
+
+.toctree-checkbox:checked ~ ul {
+  max-height: 900px; /* Set max height as big as you think it will ever go */
+  transition: max-height 1.5s ease;
+}
+.toctree-checkbox ~ ul {
+  display: block !important;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
