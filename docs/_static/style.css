@@ -1,3 +1,10 @@
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
 .header-article,
 .header-article-main {
   height: 0 !important;
@@ -13,15 +20,15 @@
 }
 
 .bd-toc {
-  margin-top: 1em;
+  margin-top: 5em;
 }
 
-.bd-sidebar__top > .bd-search {
-  display: none !important;
+.bd-search {
+  padding: 1rem 15px 0 15px !important;
 }
 
 #main-content {
-  min-height: 85vh;
+  padding-top: 1rem !important;
 }
 
 #main-content > div {
@@ -48,16 +55,24 @@
 .footer-content {
   display: none;
 }
+
+.list-caption ul.nav {
+  padding-left: 15px !important;
+}
 li {
   overflow: hidden !important;
 }
 
 .toctree-checkbox:checked ~ ul {
   max-height: 900px; /* Set max height as big as you think it will ever go */
-  transition: max-height 1.5s ease;
+  transition: max-height 1s ease-in;
 }
 .toctree-checkbox ~ ul {
   display: block !important;
   max-height: 0;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.5s ease-out;
+}
+
+.toctree-l1.has-children > a {
+  text-transform: uppercase;
 }

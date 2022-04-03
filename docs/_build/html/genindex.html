@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         
@@ -111,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Overview
+    Front End
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -120,53 +121,164 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="front/overview/index.html">
+     Overview
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/overview/project-setup.html">
+       Project setup
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/overview/project-best-practices.html">
+       Project best practices
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="overview/project-setup.html">
-     Project setup
+    <a class="reference internal" href="front/react/index.html">
+     React
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="overview/plugins.html">
-     IDE plugins
+    <a class="reference internal" href="front/typescript/index.html">
+     Typescript
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="overview/links.html">
+    <a class="reference internal" href="front/css/index.html">
+     Css
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="front/data/index.html">
+     Data
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="front/data/easy-peasy/index.html">
+       Easy-peasy library
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="front/data/easy-peasy/data-storing.html">
+         Storing data
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="front/data/easy-peasy/best-practices.html">
+         Easy peasy best practices
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="front/data/react-query/index.html">
+       React-query library
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="front/data/react-query/data-fetching.html">
+         Fetching server data
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="front/data/react-query/optimistic-updates.html">
+         Optimistic updates
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="front/forms/index.html">
+     Forms
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="front/testing/index.html">
+     Testing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/storybook.html">
+       Storybook
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/snapshots.html">
+       Snapshot testing
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/mocks.html">
+       Mocks
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/test-structure.html">
+       Test structure
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/test-example.html">
+       Writing a typical test
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/coverage.html">
+       Collecting coverage
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/plugins.html">
+       IDE plugins for testing
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="front/testing/links.html">
+       Useful links about testing front-end
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="front/links.html">
      Useful links
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Best practices
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="best-practices/common.html">
-     Common best practices
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="best-practices/react.html">
-     React best practices
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="best-practices/typescript.html">
-     Typescript best practices
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="best-practices/css.html">
-     Best practices in writing css styles
+    <a class="reference internal" href="front/plugins.html">
+     IDE plugins
     </a>
    </li>
   </ul>
@@ -174,18 +286,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Forms
+    Back End
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="forms/intro.html">
-     Introduction to working with forms
+    <a class="reference internal" href="back/index.html">
+     Placeholder
     </a>
    </li>
   </ul>
@@ -193,77 +305,23 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Working with data
+    Docs contribution
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="data/intro.html">
-     Introduction to working with a data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Testing
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/intro.html">
-     Introduction to front-end testing
+    <a class="reference internal" href="contribution/index.html">
+     Overview
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="testing/storybook.html">
-     Storybook
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/snapshots.html">
-     Snapshot testing
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/mocks.html">
-     Mocks
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/test-structure.html">
-     Test structure
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/test-example.html">
-     Writing a typical test
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/coverage.html">
-     Collecting coverage
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/plugins.html">
-     IDE plugins for testing
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="testing/links.html">
-     Useful links about testing front-end
+    <a class="reference internal" href="contribution/kitchen-sink.html">
+     Kitchen sink
     </a>
    </li>
   </ul>
@@ -275,7 +333,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            <script type="module" src="https://unpkg.com/dark-mode-toggle"></script> <span class="buttons-container"> <button onclick="toggleFullScreen()" class="headerbtn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Fullscreen mode"> <span class="headerbtn__icon-container"> <i class="fas fa-expand"></i> </span> </button> <form action="https://github.com/ou-dgolitsyn/react-typescript-styleguide"> <button class="headerbtn menu-dropdown__trigger" aria-label="Source repositories"> <i class="fab fa-github"></i> </button> </form> </span> <div>Powered by <a href="https://jupyterbook.org">Jupyter Book</a></div> 
             </div>
             
         </div>
@@ -404,8 +462,36 @@ title="Open an issue"
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
+ <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  
 </div>
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Python Enhancement Proposals
+
+      <ul>
+        <li><a href="contribution/kitchen-sink.html#index-0">PEP 287</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    RFC
+
+      <ul>
+        <li><a href="contribution/kitchen-sink.html#index-1">RFC 2822</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
 
 
               </div>

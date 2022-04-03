@@ -4,31 +4,53 @@
 format: jb-book
 root: index
 parts:  
-  - caption: Overview
+  - caption: Front End
+    chapters:   
+      - file: front/overview/index  
+        title: Overview      
+        sections:
+        - file: front/overview/project-setup
+        - file: front/overview/project-best-practices
+      - file: front/react/index  
+        title: React
+      - file: front/typescript/index         
+        title: Typescript
+      - file: front/css/index   
+        title: Css
+      - file: front/data/index
+        title: Data
+        sections:
+        - file: front/data/easy-peasy/index
+          title: Easy-peasy library        
+          sections:
+          - file: front/data/easy-peasy/data-storing
+          - file: front/data/easy-peasy/best-practices
+        - file: front/data/react-query/index
+          title: React-query library
+          sections:
+          - file: front/data/react-query/data-fetching
+          - file: front/data/react-query/optimistic-updates
+      - file: front/forms/index
+        title: Forms
+      - file: front/testing/index
+        title: Testing
+        sections:          
+          - file: front/testing/storybook
+          - file: front/testing/snapshots
+          - file: front/testing/mocks
+          - file: front/testing/test-structure
+          - file: front/testing/test-example
+          - file: front/testing/coverage
+          - file: front/testing/plugins
+          - file: front/testing/links
+      - file: front/links
+      - file: front/plugins  
+  - caption: Back End
+    chapters:  
+      - file: back/index
+        title: Placeholder  
+  - caption: Docs contribution
     chapters:
-      - file: overview/project-setup
-      - file: overview/plugins
-      - file: overview/links
-  - caption: Best practices
-    chapters:
-      - file: best-practices/common
-      - file: best-practices/react
-      - file: best-practices/typescript
-      - file: best-practices/css
-  - caption: Forms
-    chapters:
-      - file: forms/intro
-  - caption: Working with data
-    chapters:
-      - file: data/intro
-  - caption: Testing
-    chapters:
-      - file: testing/intro
-      - file: testing/storybook
-      - file: testing/snapshots
-      - file: testing/mocks
-      - file: testing/test-structure
-      - file: testing/test-example
-      - file: testing/coverage
-      - file: testing/plugins
-      - file: testing/links
+      - file: contribution/index
+        title: Overview
+      - file: contribution/kitchen-sink

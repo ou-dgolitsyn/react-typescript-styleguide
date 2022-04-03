@@ -1,4 +1,4 @@
-# Common best practices
+# Project best practices
 
 ## 100 lines rule
 
