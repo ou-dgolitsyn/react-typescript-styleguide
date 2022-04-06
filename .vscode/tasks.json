@@ -8,7 +8,7 @@
                 "panel": "shared",
                 "reveal": "always"
             },
-            "command": "jupyter-book build --all ./docs"
+            "command": "jupyter-book build --all ./src --path-output ./output"
         }
     ]
 }

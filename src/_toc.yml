@@ -1,0 +1,65 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:  
+  - caption: Front End
+    chapters:   
+      - file: front-end/overview/index  
+        title: Overview      
+        sections:
+        - file: front-end/overview/project-setup
+        - file: front-end/overview/best-practices
+      - file: front-end/react/index  
+        title: React
+        sections:
+        - file: front-end/react/best-practices
+      - file: front-end/typescript/index         
+        title: Typescript
+        sections:
+        - file: front-end/typescript/best-practices
+      - file: front-end/css/index   
+        title: Css
+        sections:
+        - file: front-end/css/best-practices
+      - file: front-end/data/index
+        title: Data
+        sections:
+        - file: front-end/data/easy-peasy/index
+          title: Easy-peasy library        
+          sections:
+          - file: front-end/data/easy-peasy/data-storing
+          - file: front-end/data/easy-peasy/best-practices
+        - file: front-end/data/react-query/index
+          title: React-query library
+          sections:
+          - file: front-end/data/react-query/data-fetching
+          - file: front-end/data/react-query/optimistic-updates
+      - file: front-end/forms/index
+        title: Forms
+        sections:
+        - file: front-end/forms/best-practices
+      - file: front-end/testing/index
+        title: Testing
+        sections:          
+          - file: front-end/testing/storybook
+          - file: front-end/testing/snapshots
+          - file: front-end/testing/mocks
+          - file: front-end/testing/test-structure
+          - file: front-end/testing/test-example
+          - file: front-end/testing/coverage
+          - file: front-end/testing/plugins
+          - file: front-end/testing/links
+      - file: front-end/links
+      - file: front-end/plugins  
+  - caption: Back End
+    chapters:  
+      - file: back-end/index
+        title: Placeholder  
+  - caption: Docs contribution
+    chapters:
+      - file: contribution/index
+        title: Overview
+      - file: contribution/myst-markdown-syntax
+      - file: contribution/iframe
