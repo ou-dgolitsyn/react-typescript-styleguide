@@ -1,1 +1,0 @@
-# Intro in docs contribution

@@ -1,7 +1,8 @@
 # Introduction to front-end testing
 
-Testing principles
+This chapter contains (or will contain 😉) a detailed breakdown of techniques for creating UI tests and their effective coverage of the code base.
 
-- Why we test
-- What we test
-- Coverage
+## In this section
+
+:::{tableofcontents}
+:::

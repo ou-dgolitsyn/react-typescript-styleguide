@@ -1,3 +1,5 @@
 # Storybook
 
-How to use storybook in UI testing
+:::{note}
+There's nothing here yet, but surely something cool will appear 😉
+:::
