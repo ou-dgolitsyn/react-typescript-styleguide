@@ -74,5 +74,5 @@
 }
 
 .toctree-l1.has-children > a {
-  text-transform: uppercase;
+  font-weight: 800 !important;
 }
